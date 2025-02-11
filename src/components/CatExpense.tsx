@@ -7,10 +7,11 @@ import { ExpenseCategory, Expense } from "@/types";
 export default function CatExpense() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [expenses, setExpenses] = useState<Expense[]>([
-    { name: 'Whiskers Cat food', category: ExpenseCategory.FOOD, amount: 10 },
-    { name: 'Self cleaning cat Litter box', category: ExpenseCategory.FURNITURE, amount: 500 },
-    { name: 'Diamond Cat collar', category: ExpenseCategory.ACCESSORY, amount: 1000 },
+    { id: '1', name: 'Whiskers Cat food', category: ExpenseCategory.FOOD, amount: 10 },
+    { id: '2', name: 'Self cleaning cat Litter box', category: ExpenseCategory.FURNITURE, amount: 500 },
+    { id: '3', name: 'Diamond Cat collar', category: ExpenseCategory.ACCESSORY, amount: 1000 },
   ]);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   return (
     <>
@@ -19,7 +20,11 @@ export default function CatExpense() {
         <Button title="Delete Expense" />
       </div>
 
-      <ExpensesTable data={expenses} />
+      <ExpensesTable
+        data={expenses}
+        selectedIds={selectedIds}
+        onSelectIds={(ids: string[]) => setSelectedIds(ids)}
+      />
 
       <AddExpenceModal isOpen={isModalOpen} />
     </>

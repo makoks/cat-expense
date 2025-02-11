@@ -5,6 +5,7 @@ export enum ExpenseCategory {
 }
 
 export interface Expense {
+  id: string;
   name: string;
   category: ExpenseCategory;
   amount: number;
