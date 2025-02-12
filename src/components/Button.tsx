@@ -3,7 +3,7 @@ import styles from "@/styles/Button.module.css";
 interface Props {
   title: string;
   disabledText?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default function Button({ title, disabledText, onClick }: Props) {
