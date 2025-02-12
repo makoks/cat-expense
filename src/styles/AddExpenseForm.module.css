@@ -8,27 +8,27 @@
   display: grid;
   grid-template-areas: 'label input' 'label error';
   grid-template-columns: 100px 200px;
+}
 
-  label {
-    grid-area: label;
-    padding: 4px 0;
-  }
+.field label {
+  grid-area: label;
+  padding: 4px 0;
+}
 
-  input,
-  select {
-    grid-area: input;
-    padding: 4px 8px;
-    border-width: 1px;
-    border-radius: 4px;
-    font-size: inherit;
-  }
+.field input,
+.field select {
+  grid-area: input;
+  padding: 4px 8px;
+  border-width: 1px;
+  border-radius: 4px;
+  font-size: inherit;
+}
 
-  span {
-    grid-area: error;
-    padding-top: 2px;
-    font-size: smaller;
-    color: #d32f2f;
-  }
+.field span {
+  grid-area: error;
+  padding-top: 2px;
+  font-size: smaller;
+  color: #d32f2f;
 }
 
 .invalid {
