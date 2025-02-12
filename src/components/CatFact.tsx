@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "@/styles/CatFact.module.css";
 
 const errorMessage = 'Failed to fetch fact';
 
@@ -28,7 +29,7 @@ export default function CatFact() {
 
   return (
     <article>
-      <h2>Random cat fact:</h2>
+      <h2 className={styles.title}>Random cat fact:</h2>
       <p>{isLoading ? 'Loading...' : fact}</p>
     </article>
   );

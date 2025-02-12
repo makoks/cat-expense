@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import ExpensesTable from "@/components/ExpenseTable";
 import { expenses as initialExpenses } from "@/resources";
 import { type Expense } from "@/types";
+import styles from "@/styles/CatExpense.module.css";
 
 export default function CatExpense() {
   const [expenses, setExpenses] = useState<Expense[]>(initialExpenses);
@@ -20,7 +21,7 @@ export default function CatExpense() {
 
   return (
     <>
-      <div className="controls">
+      <div className={styles.controls}>
         <ExpenseDetailDialog onAddExpense={handleAddExpense} />
 
         <Button

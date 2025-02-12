@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .field {
@@ -12,16 +12,20 @@
 
 .field label {
   grid-area: label;
-  padding: 4px 0;
+  padding: 10px 0;
 }
 
 .field input,
 .field select {
   grid-area: input;
-  padding: 4px 8px;
+  padding: 10px;
   border-width: 1px;
   border-radius: 4px;
   font-size: inherit;
+}
+
+.field select {
+  cursor: pointer;
 }
 
 .field span {

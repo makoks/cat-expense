@@ -1,12 +1,6 @@
 import Head from "next/head";
-import { Sour_Gummy } from "next/font/google";
 import CatExpense from "@/components/CatExpense";
 import styles from "@/styles/Home.module.css";
-
-const sourGummy = Sour_Gummy({
-  variable: "--font-sour-gummy",
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (
@@ -17,11 +11,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.page}>
+        <header className={styles.header}>
+          <h1 className={styles.container}>
+            Cat Expense
+          </h1>
+        </header>
 
-      <div className={`${styles.page} ${sourGummy.variable}`}>
-        <header>Cat Expense</header>
-
-        <main className={styles.main}>
+        <main className={`${styles.container} ${styles.main}`}>
           <CatExpense />
         </main>
       </div>

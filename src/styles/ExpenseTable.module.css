@@ -1,24 +1,32 @@
 .container {
-  display: flex;
-  justify-content: center;
   max-width: 100%;
   overflow-x: auto;
-  padding: 40px 60px;
+  padding: 40px 16px;
   border-radius: 8px;
-  border: 1px solid #828282;
+  border: 1px solid rgba(130, 130, 130, 0.4);
   backdrop-filter: blur(10px);
 }
 
 .table {
+  width: 100%;
   border-collapse: collapse;
+  box-shadow: 0 2px 5px rgba(130, 130, 130, 0.4);
 }
 
 .table th,
 .table td {
   padding: 12px 16px;
-  border: 1px solid #828282;
+  border: 1px solid rgb(130, 130, 130, 0.4);
 }
 
 .highlight {
   background-color: rgba(0, 150, 255, 0.15);
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 60px;
+  }
 }
