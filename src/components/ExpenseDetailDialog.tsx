@@ -22,7 +22,12 @@ export default function ExpenceDetailDialog({ onAddExpense }: Props) {
   const handleClose = () => {
     dialog.current?.close();
     setIsOpen(false);
-  }
+  };
+
+  const handleSubmit = (expense: Expense) => {
+    onAddExpense(expense);
+    handleClose();
+  };
   
   return (
     <>
@@ -33,7 +38,7 @@ export default function ExpenceDetailDialog({ onAddExpense }: Props) {
 
         {isOpen && (
           <div className={styles.content}>
-            <AddExpenseForm onSubmit={onAddExpense} />
+            <AddExpenseForm onSubmit={handleSubmit} />
 
             <CatFact />
           </div>

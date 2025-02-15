@@ -23,17 +23,14 @@ const validation: Record<FieldName, { check: (value?: string | number) => boolea
   },
 };
 
-const initialErrors = {
-  name: validation.name.message,
-  category: validation.category.message,
-  amount: validation.amount.message,
-};
-const initialTouched = { name: false, category: false, amount: false };
-
 export default function AddExpenseForm({ onSubmit }: Props) {
   const [expense, setExpense] = useState<Partial<Expense>>({ id: crypto.randomUUID() });
-  const [errors, setErrors] = useState(initialErrors);
-  const [touched, setTouched] = useState(initialTouched);
+  const [errors, setErrors] = useState({
+    name: validation.name.message,
+    category: validation.category.message,
+    amount: validation.amount.message,
+  });
+  const [touched, setTouched] = useState({ name: false, category: false, amount: false });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const fieldName = event.target.name as FieldName;
@@ -56,10 +53,6 @@ export default function AddExpenseForm({ onSubmit }: Props) {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onSubmit(expense as Expense);
-    setExpense({ id: crypto.randomUUID() });
-    setErrors(initialErrors);
-    setTouched(initialTouched);
-    (event.target as HTMLFormElement).reset();
   };
 
   return (
