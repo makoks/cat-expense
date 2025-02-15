@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Button from "@/components/Button";
 import AddExpenseForm from "@/components/AddExpenseForm";
 import CatFact from "@/components/CatFact";
@@ -23,11 +23,6 @@ export default function ExpenceDetailDialog({ onAddExpense }: Props) {
     dialog.current?.close();
     setIsOpen(false);
   }
-
-  useEffect(() => {
-    console.log('dialog')
-    return () => {console.log('dialog unmount')}
-  }, [])
   
   return (
     <>
