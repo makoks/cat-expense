@@ -1,3 +1,7 @@
+.fact {
+  min-height: 200px;
+}
+
 .title {
   margin-bottom: 20px;
   font-size: inherit;

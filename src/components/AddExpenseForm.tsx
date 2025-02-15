@@ -106,7 +106,8 @@ export default function AddExpenseForm({ onSubmit }: Props) {
           placeholder="Item amount"
           className={touched.amount && errors.amount ? styles.invalid : undefined}
           required
-          min={1}
+          min={0.01}
+          step={0.01}
           onChange={handleChange}
           onBlur={handleChange}
         />

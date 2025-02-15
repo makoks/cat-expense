@@ -16,6 +16,11 @@ body {
   overflow-x: hidden;
 }
 
+html:has(dialog[open]),
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

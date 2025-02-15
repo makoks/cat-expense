@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background: url('/cat-fur.jpg') center/cover no-repeat;
+  background: url('/light-bg.webp') center bottom/cover no-repeat;
 }
 
 .header {
@@ -23,7 +23,7 @@
 
 @media (prefers-color-scheme: dark) {
   .page {
-    background-image: url('/black-cat-fur-texture.jpg');
+    background-image: url('/dark-bg.webp');
   }
 }
 

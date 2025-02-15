@@ -9,6 +9,13 @@ interface Props {
   onSelectIds: (ids: string[]) => void;
 }
 
+const amountFormat = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  roundingPriority: 'lessPrecision',
+});
+
 export default function Table({ data, selectedIds, onSelectIds }: Props) {
   const topCategories = useMemo(() => {
     const totalExpenses = data.reduce(
@@ -51,7 +58,7 @@ export default function Table({ data, selectedIds, onSelectIds }: Props) {
                 </td>
                 <td>{row.name}</td>
                 <td>{row.category}</td>
-                <td>{row.amount}$</td>
+                <td>{amountFormat.format(row.amount)}</td>
               </tr>
             ))}
           </tbody>

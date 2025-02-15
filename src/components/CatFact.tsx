@@ -8,7 +8,6 @@ export default function CatFact() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('mount');
     const fetchFact = async () => {
       try {
         const response = await fetch('https://catfact.ninja/fact');
@@ -24,11 +23,10 @@ export default function CatFact() {
       }
     };
     fetchFact();
-    return () => {console.log('unmount')}
   }, []);
 
   return (
-    <article>
+    <article className={styles.fact}>
       <h2 className={styles.title}>Random cat fact:</h2>
       <p>{isLoading ? 'Loading...' : fact}</p>
     </article>
