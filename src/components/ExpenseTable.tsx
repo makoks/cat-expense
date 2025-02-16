@@ -64,7 +64,7 @@ export default function Table({ data, selectedIds, onSelectIds }: Props) {
           </tbody>
         </table>
       ) : (
-        <div>Meowconomy needs funding ^^</div>
+        <div className={styles.empty}>Meowconomy needs funding ^^</div>
       )}
     </div>
   );

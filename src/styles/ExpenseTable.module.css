@@ -20,6 +20,21 @@
   background-color: rgba(0, 150, 255, 0.15);
 }
 
+.empty {
+  padding: 50px;
+  text-align: center;
+  border: 1px solid rgb(130, 130, 130, 0.4);
+}
+
+.empty::before {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 62px;
+  margin: 0 auto 10px;
+  background: url(/no-data.webp) center/contain no-repeat;
+}
+
 @media (min-width: 768px) {
   .table th,
   .table td {
