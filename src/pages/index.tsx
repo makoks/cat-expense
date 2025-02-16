@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import CatExpense from "@/components/CatExpense";
 import styles from "@/styles/Home.module.css";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <div className={styles.page}>
         <header className={styles.header}>
           <h1 className={styles.container}>
+            <Image src="/logo.png" width={36} height={36} alt="Cat Expence logo" />
             Cat Expense
           </h1>
         </header>
