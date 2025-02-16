@@ -7,10 +7,11 @@
   padding: 10px 0;
   border-bottom: 1px solid #828282;
 
-  h1 {
-    display: flex;
-    gap: 16px;
-  }
+}
+
+.header h1 {
+  display: flex;
+  gap: 16px;
 }
 
 .container {
